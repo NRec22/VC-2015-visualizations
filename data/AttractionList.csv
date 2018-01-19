@@ -1,0 +1,75 @@
+map-id,attr-name,X,Y,attr-type,area
+1,Wrightiraptor Mountain,47,11,Thrill,Coaster Alley
+2,Galactosaurus Rage,27,15,Thrill,Coaster Alley
+3,Auvilotops Express,38,90,Thrill,Tundra Land
+4,TerrorSaur ,78,48,Thrill,Wet Land
+5,Wendisaurus Chase,16,66,Thrill,Tundra Land
+6,Keimosaurus Big Spin,86,44,Thrill,Coaster Alley
+7,Firefall,17,43,Thrill,Wet Land
+8,Atmosfear,45,24,Thrill,Coaster Alley
+9,North Line,92,81,Kiddie,Kiddie Land
+10,Jeredactyl Jump,81,77,Kiddie,Kiddie Land
+11,Sauroma Bumpers,73,79,Kiddie,Kiddie Land
+12,Flying TyrAndrienkos,73,84,Kiddie,Kiddie Land
+13,Cyndisaurus Asteroid,79,87,Kiddie,Kiddie Land
+14,Beelzebufo,76,88,Kiddie,Kiddie Land
+15,Enchanted Toadstools,79,89,Kiddie,Kiddie Land
+16,Stegocycles,82,80,Kiddie,Kiddie Land
+17,Blue Iguanodon,83,88,Kiddie,Kiddie Land
+18,Wild Jungle Cruise,85,86,Kiddie,Kiddie Land
+19,Stone Cups,87,81,Kiddie,Kiddie Land
+20,Scholtz Express,6,43,Everybody,Wet Land
+21,Paleocarrie Carousel,34,68,Everybody,Tundra Land
+22,Jurassic Road,17,67,Everybody,Tundra Land
+23,Rhynasaurus Rampage,16,49,Everybody,Wet Land
+24,Kauf's Lost Canyon Escape,43,56,Everybody,Wet Land
+25,Maiasaur Madness,26,59,Everybody,Tundra Land
+26,Kristanodon Kaper,28,66,Everybody,Tundra Land
+27,Squidosaur,48,87,Everybody,Tundra Land
+28,Eberlesaurus Roundup,23,54,Everybody,Tundra Land
+29,Dykesadactyl Thrill,87,48,Everybody,Coaster Alley
+30,Ichthyoroberts Rapids,78,37,Everybody,Wet Land
+31,Raptor Race,43,78,Everybody,Tundra Land
+32,Creighton Pavilion,32,33,Pavilion,Wet Land
+33,Alvarez Beer Garden,20,33,Beer Garden,Wet Land
+34,Mary Anning Beer Garden,79,25,Beer Garden,Coaster Alley
+35,Theresaur Food Stop,59,46,Food,Wet Land
+36,Paleo Shreckwiches,35,15,Food,Coaster Alley
+37,Krystal Cook Café,59,89,Food,Entry Corridor
+38,Shilobite o'Pizza,57,73,Food,Entry Corridor
+39,Chensational Sweets,87,68,Food,Kiddie Land
+40,Munzasaurus Souvenirs,42,60,Shopping,Tundra Land
+41,Laskonasaur Store,57,64,Shopping,Entry Corridor
+42,World of WarRocks Shop,16,47,Shopping,Wet Land
+43,Whitley's Plushadactyl,44,25,Shopping,Coaster Alley
+44,Staskosaurus Designs,69,72,Shopping,Entry Corridor
+45,Dino Chic Clothing,56,80,Shopping,Entry Corridor
+46,Petroglyph Body Art,22,35,Shopping,Wet Land
+47,League of Legenodons,69,58,Shopping,Entry Corridor
+48,The Magic Cavern,29,67,Shopping,Tundra Land
+49,Raptor Restroom,3,66,Restroom,Tundra Land
+50,Tar Pit Stop,52,28,Restroom,Coaster Alley
+51,LavaTory,55,50,Restroom,Wet Land
+52,Tricerastop,76,73,Restroom,Kiddie Land
+53,Old Wood BBQ,15,40,Food,Wet Land
+54,Ice Age Cones,84,78,Food,Kiddie Land
+55,Plaisantly Popped Corn,76,61,Food,Kiddie Land
+56,Floral Funnels,43,75,Food,Tundra Land
+57,Permafrosties,42,20,Food,Coaster Alley
+58,Granite Slab Pizza,47,79,Food,Tundra Land
+59,EberTrex Fries,23,66,Food,Tundra Land
+60,Daily Slab Maps and Info,68,91,Info,Entry Corridor
+61,Primal Carnage Arcade,69,67,Arcade,Entry Corridor
+62,Liggement Fix-Me-Up,50,57,First Aid,Tundra Land
+63,Grinosaurus Stage,76,22,Stage,Coaster Alley
+64,SabreTooth Theatre,87,63,Show Hall,Kiddie Land
+65,Darwin’s Stop ,22,27,Restroom,Coaster Alley
+66,Tyrannosaurus Rest,72,20,Restroom,Coaster Alley
+67,Fisching Rooms,92,77,Restroom,Kiddie Land
+81,Flight of the Swingodon,69,44,Thrill,Wet Land
+100,Main Entrance,63,99,Entrance,Entry Corridor
+101,Kiddle Land Entrance,99,77,Entrance,Kiddie Land
+102,Wet Land Entrance,0,67,Entrance,Wet Land
+103,Ichthyoroberts Rapids Viewing Area One,42,37,Everybody,Wet Land
+104,Ichthyoroberts Rapids Viewing Area Two,60,37,Everybody,Wet Land
+105,Ichthyoroberts Rapids Viewing Area Three,67,37,Everybody,Wet Land

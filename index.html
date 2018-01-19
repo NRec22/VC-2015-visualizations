@@ -1,0 +1,499 @@
+<!-- Neven Recchia 27968018 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS 590V HW4</title>
+	<meta charset="UTF-8">
+  	<!-- css to read -->
+  	<link rel="stylesheet" type="text/css" href="./static/lib/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="./static/lib/css/dc.css"/>
+
+	<style>
+
+    body {
+		  font: 8pt arial, sans-serif;
+    }
+
+    .axis path, .axis line {
+     	fill: none;
+     	stroke: #000000;
+    }
+
+    .brush rect.extent {
+     	fill: #3F51B5;
+     	fill-opacity: .250;
+    }
+
+    .dc-chart g.row text {
+      fill: black;
+    }
+
+	</style>
+</head>
+
+<body>
+
+<div class="container" style="width:1600">
+<h2>CS 590V - Homework 4</h2>
+<p>Neven Recchia - ID#: 27968018</p>
+<p>VAST Challenge 2015: DinoFun World Mini Challenge 1 Dataset</p><br>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <img src="./data/dinofunworldbanner.jpg" class="img-responsive" alt="DinoFun World Banner">
+  </div>
+
+  <h2>WELCOME TO DINOFUN WORLD!</h2>
+  <p>You have been assigned by the park's owner to view this exclusive site with important data. This data is the movement tracking data from visitors at our theme park
+  over the course of a weekend, from June 6th, 2014, to June 8th, 2014. Will you help us by finding patterns from the park data and offer suggestions to better improve
+  our park?</p><br>
+</div>
+
+
+<div class="btn-group">
+  <button class="btn"><a href="./index.html">Friday</a></button>
+  <button class="btn"><a href="./sat.html">Saturday</a></button>
+  <button class="btn"><a href="./sun.html">Sunday</a></button>
+</div>
+<h3>Friday - June 6th, 2014</h3>
+
+<div class="row">
+  <!-- bar chart -->
+  <div class="span6">
+    <div id="group-size-bar-chart">
+      <h4>Group Size Frequencies</h4>
+      <a class="reset" href="javascript:nGroupSizeChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This bar chart shows group sizes and the total number of groups for each size that entered the park on friday. You can select one group or multiple groups,
+     and hover for info.</p><br>
+    <p>Here, you can see that the majority of groups that arrive at DinoFun World fall below sizes of 6 guests. There are few groups with higher amounts of guests in them,
+    probably visiting together as a class or as an enthusiant group or a company outing.</p><br>
+  </div>
+  <!-- pie chart -->
+  <div class="span6">
+    <div id="group-size-pie-chart">
+      <h4>Group Size Percentages</h4>
+      <a class="reset" href="javascript:sizePercentChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This pie chart shows the percentages of the group sizes that entered the park on friday. You can select one group or multiple groups,
+     and hover for info.</p><br>
+    <p>This is the same data as the bar chart to the left, but in a different representation. Groups of sizes 1-4 consist of of 75% of all groups.</p><br>
+  </div>
+</div>
+
+<div class="row">
+  <!-- row chart -->
+  <div class="span6">
+    <div id="area-checkin-row-chart">
+      <h4>Check-In Frequencies by Park Area</h4>
+      <a class="reset" href="javascript:areaCheckChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This bar chart shows the total number of check-ins from guest personal devices registered in each area of the park. You can select one area or multiple areas,
+     and hover for info.</p><br>
+    <p>Here, you can see the areas of the park which have the most check-ins. The total can be influenced by several factors. Areas with more attractions and more guests 
+    will have higher check-in numbers. Other minor factors could be the popularity of certain attractions inside and the amount of time guests spend in each land.</p><br>
+  </div>
+  <!-- row chart -->
+  <div class="span6">
+    <div id="dist-area-checkin-row-chart">
+      <h4>Unique Check-In by Park Area</h4>
+      <a class="reset" href="javascript:distAreaCheckChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This bar chart shows the number of unique check-ins from each guest personal device at each area of the park. You can select one area or multiple areas,
+     and hover for info.</p><br>
+    <p>Unlike the last chart with repeat check-ins, we can see exactly how many different guests checked in from each area in the park. We can see that a few lands have
+    received a relative similar amount of guests, with no area as a clear favorite. However, we can see that a significant amount of guests never set foot in the Entry
+    Corridor. This may guests who entered at the other two entrances and skipped attractions in the Entry Corridor.</p><br>
+  </div>
+</div>
+
+<div class="row">
+  <!-- heatmap -->
+  <div class="span9">
+    <div id="hourly-checkin-attrtype-heatmap">
+      <h4>Hourly Check-Ins by Attraction Type</h4>
+      <a class="reset" href="javascript:hourCheckAttrTypeHeat.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This heatmap shows the number of total check-ins over each hour for every attraction type. You can select and hover for info.</p><br>
+    <p>This offers a great breakdown to see which types of attractions are more popular at DinoFun World over the course of this particular friday. We can see
+    that thrill rides are the most popular, even maintaining the amounts of check-ins throughout the day. Attractions for everybody and kiddie rides are the next most popular.</p><br>
+  </div>
+</div>
+
+<div class="row">
+  <!-- heatmap -->
+  <div class="span9">
+    <div id="hourly-checkin-ride-heatmap">
+      <h4>Hourly Check-Ins for each Attraction ID</h4>
+      <a class="reset" href="javascript:hourCheckRideHeat.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This heatmap shows the number of total check-ins over each hour for every attraction in the park. You can select and hover for info.</p><br>
+    <p>This shows a great breakdown to see which specific attractions are more popular at DinoFun World on this particular friday. As expected, the three entrances are 
+    the most busy at the opening hours of the park. With closer inspection, it appears attractions with more check-ins over the course of the day are thrill rides and 
+    one of the park's pavilions. We see attendance at the stage spike up at certain hours, since the stage most likely has shows at these times.</p><br>
+  </div>
+</div>
+
+<div class="row">
+  <!-- bubble chart -->
+  <div class="span9">
+    <div id="xy-checkin-ride-bubble">
+      <h4>Check-Ins for each Attraction Location</h4>
+      <a class="reset" href="javascript:xyCheckRideBubble.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    <p>This bubble chart shows the each attraction in the park and its location on an (X,Y) coordinate grid, each cell is a 5m x 5m square of the park. The colors represent
+    which the land each attraction belongs to, as shown when looking at the park map or when hovering over each point. You can select one or multiple attractions and 
+    hover for info.</p><br>
+    <p>This chart shows which specific attractions are more popular at DinoFun World on this particular friday with the attractions positioned relative to their actual locations.
+    We have figured from previous charts that thrill rides are the most popular in the park and is shown again here with those attractions' larger circles on this chart. We can see
+    here that each area except for Entry Corridor and Kiddie Land has at least one of DinoFun World's more popular attractions. Below is the park map:</p><br>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <img src="./data/parkmap1-1024x944.png" class="img-responsive" alt="DinoFun World Park Map">
+  </div>
+</div>
+
+
+<!-- FOOTER & CITATIONS -->
+<div class="container">
+<p>
+  <h4>Links and Resources</h4>
+  Data:<br>
+  <a href="http://vacommunity.org/VAST+Challenge+2015">http://vacommunity.org/VAST+Challenge+2015</a><br><br>
+  Library / Framework Resources:<br>
+  <a href="https://d3js.org/">https://d3js.org/</a><br>
+  <a href="http://crossfilter.github.io/crossfilter/">http://crossfilter.github.io/crossfilter/</a><br>
+  <a href="https://dc-js.github.io/dc.js/">https://dc-js.github.io/dc.js/</a><br>
+  <a href="https://github.com/square/crossfilter/wiki/API-Reference">https://github.com/square/crossfilter/wiki/API-Reference</a><br>
+  <a href="https://dc-js.github.io/dc.js/docs/html/index.html">https://dc-js.github.io/dc.js/docs/html/index.html</a><br>
+  <a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a><br>
+  <a href="http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/">http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/</a><br><br>
+  Example Code and Graphs:<br>
+  <a href="https://github.com/dc-js/dc.js/tree/master/web/examples">https://github.com/dc-js/dc.js/tree/master/web/examples</a><br>
+  <a href="http://blockbuilder.org/gordonwoodhull/ecce8e32d64c662cffd5">http://blockbuilder.org/gordonwoodhull/ecce8e32d64c662cffd5</a><br>
+  <a href="https://github.com/square/crossfilter/tree/gh-pages">https://github.com/square/crossfilter/tree/gh-pages</a><br>
+  <a href="https://github.com/dc-js/dc.js/blob/master/web/examples/bar.html">https://github.com/dc-js/dc.js/blob/master/web/examples/bar.html</a><br>
+  <a href="https://github.com/dc-js/dc.js/blob/master/web/examples/heatmap-filtering.html">https://github.com/dc-js/dc.js/blob/master/web/examples/heatmap-filtering.html</a><br>
+  <a href="https://github.com/dc-js/dc.js/blob/master/web/examples/line.html">https://github.com/dc-js/dc.js/blob/master/web/examples/line.html</a><br>
+  <a href="https://github.com/dc-js/dc.js/blob/master/web/examples/scatter-brushing.html">https://github.com/dc-js/dc.js/blob/master/web/examples/scatter-brushing.html</a><br>
+  <a href="https://github.com/dc-js/dc.js/blob/master/web/examples/pie.html">https://github.com/dc-js/dc.js/blob/master/web/examples/pie.html</a>
+  <a href="https://github.com/dc-js/dc.js/wiki/FAQ#accumulate-values">https://github.com/dc-js/dc.js/wiki/FAQ#accumulate-values</a>
+</p>
+</div>
+
+<!-- import library scripts -->
+<script type="text/javascript" src="./static/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="./static/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/lib/js/d3.js"></script>
+<script type="text/javascript" src="./static/lib/js/crossfilter.js"></script>
+<script type="text/javascript" src="./static/lib/js/dc.js"></script>
+<script type="text/javascript" src="./static/lib/js/reductio.js"></script>
+<!-- <script type="text/javascript" src="./static/lib/js/d3-queue.min.js"></script> -->
+
+
+
+<!-- <script type="text/javascript" src="./static/js/charts.js"></script> -->
+<script type="text/javascript">
+
+  // create chart objects
+  var nGroupSizeChart = dc.barChart("#group-size-bar-chart");
+  var sizePercentChart = dc.pieChart("#group-size-pie-chart");
+  var areaCheckChart = dc.rowChart("#area-checkin-row-chart");
+  var distAreaCheckChart = dc.rowChart("#dist-area-checkin-row-chart");
+  var hourCheckAttrTypeHeat = dc.heatMap("#hourly-checkin-attrtype-heatmap");
+  var hourCheckRideHeat = dc.heatMap("#hourly-checkin-ride-heatmap");
+  var xyCheckRideBubble = dc.bubbleChart("#xy-checkin-ride-bubble");
+
+  d3.csv('fridaychk.csv', function (data){
+
+    // load data
+    // var timeFormat = d3.time.format("%H");
+    data.forEach(function(d){
+      
+      // d.hour = d3.time.hour(timeFormat.parse(d["hour"]));
+      d["hour"] = +d["hour"];
+      d["id"] = +d["id"];
+      d["X"] = +d["X"];
+      d["Y"] = +d["Y"];
+      // d["chkcount"] = +d["chkcount"];
+      d["gsize"] = +d["gsize"];
+      d["map-id"] = +d["map-id"];
+    });
+
+    // from documentation
+    function remove_empty_bins(source_group){
+      return {
+        all:function(){
+          return source_group.all().filter(function(d){
+            return d.value != 0;
+          });
+        }
+      };
+    }
+
+
+    // crossfilter dimensions and groups
+    var ndx = crossfilter(data);
+    var all = ndx.groupAll();
+
+
+    // dimension of group sizes
+    var groupSizeDimension = ndx.dimension(function(d){
+      return d["gsize"];
+    });
+    // we want to group by unique ids, then divide by size later
+    var sumGroup = groupSizeDimension.group();
+    var reducer = reductio()
+      .exception(function(d){
+        return d["id"];
+      })
+      .exceptionCount(true);
+    reducer(sumGroup);
+    var sumGroup1 = remove_empty_bins(sumGroup);
+
+    // dimension of park areas
+    var areaDimension = ndx.dimension(function(d){
+      return d["area"];
+    })
+    // we want to group total counts
+    var areaGroup = areaDimension.group();
+    // we also want to group by unique ids
+    var areaGroup2 = areaDimension.group();
+    var reducer = reductio()
+      .exception(function(d){
+        return d["id"];
+      })
+      .exceptionCount(true);
+    reducer(areaGroup2);
+
+    // dimension of hour and ride map id
+    var hourRideDim = ndx.dimension(function(d){
+      return [d["hour"], d["map-id"], d["attr-name"]];
+    });
+    var hourRideGroup = hourRideDim.group();
+
+    // dimension of hour and ride type
+    var hourTypeDim = ndx.dimension(function(d){
+      return [d["hour"], d["attr-type"]];
+    });
+    var hourTypeGroup = hourTypeDim.group();
+
+
+    // dimension of ride name
+    var attrNameDim = ndx.dimension(function(d){
+      return[d["attr-name"], d["X"], d["Y"], d["map-id"], d["area"]];
+    });
+    var attrNameGroup = attrNameDim.group();
+
+    
+
+    // color ranges and domains
+    var generalColor = d3.scale.linear().range(['#4CAF50', '#4CAF50']);
+    var scaleColor = d3.scale.linear().domain([0, 500, 1000]).range(['#E8F5E9', '#4CAF50', '#1B5E20']);
+    var scaleColor2 = d3.scale.linear().domain([0, 2500, 5000]).range(['#E0F2F1', '#009688', '#004D40']);
+
+
+    // group size bar chart
+    nGroupSizeChart
+      .width(460)
+      .height(360)
+      .brushOn(false)
+      .dimension(groupSizeDimension)
+      .group(sumGroup1)
+      .valueAccessor(function(p){
+        return (p.value.exceptionCount / p.key);
+      })
+      .colors(generalColor)
+      .elasticX(true)
+      .elasticY(true)
+      .x(d3.scale.ordinal())
+      .xUnits(dc.units.ordinal)
+      .renderHorizontalGridLines(true)
+      .renderVerticalGridLines(true)
+      .title(function(d){
+        return "Group Size: " + d.key + "\n" +
+          "Number of Groups: " + (d.value.exceptionCount / d.key);
+        })
+      .xAxisLabel("Group Size")
+      .yAxisLabel("Number of Groups");
+
+
+    // group size percentage pie chart
+    sizePercentChart
+      .width(460)
+      .height(360)
+      .dimension(groupSizeDimension)
+      .group(sumGroup1)
+      .valueAccessor(function(p){
+        return (p.value.exceptionCount / p.key);
+      })
+      .legend(dc.legend())
+      .slicesCap(8)
+      .othersLabel("9+")
+      .drawPaths(true)
+      .externalRadiusPadding(40)
+      .externalLabels(25)
+      .on('pretransition', function(chart) {
+        chart.selectAll('text.pie-slice').text(function(d) {
+          return dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+        })
+      });
+
+
+    // check in frequencies per area
+    areaCheckChart
+      .width(460)
+      .height(200)
+      .dimension(areaDimension)
+      .group(areaGroup)
+      .elasticX(true)
+      .title(function (d){
+        return "Park Area: " + d.key + "\n" +
+          "Number of Check-Ins: " + d.value;
+        });
+
+    areaCheckChart.xAxis().ticks(5);
+
+
+    // distinct checkins by area
+    distAreaCheckChart
+      .width(460)
+      .height(200)
+      .dimension(areaDimension)
+      .group(areaGroup2)
+      .valueAccessor(function(p){
+        return p.value.exceptionCount;
+      })
+      .elasticX(true)
+      .title(function (d){
+        return "Park Area: " + d.key + "\n" +
+          "Distinct Number of Check-Ins: " + d.value.exceptionCount;
+        });
+
+
+    // hourly check-ins for ride type
+    hourCheckAttrTypeHeat
+      .width(960)
+      .height(200)
+      .dimension(hourTypeDim)
+      .group(hourTypeGroup)
+      .keyAccessor(function (d){
+          return d.key[0];
+        })
+      .valueAccessor(function (d){
+          return d.key[1];
+        })
+      .colorAccessor(function (d){
+          return d.value;
+        })
+      .title(function(d) {
+          return 'Hour: ' + d.key[0] + '\n' + 'Attraction Type: ' + d.key[1] + '\n' + 'Number of Check-Ins: ' + d.value;
+        })
+      .colors(scaleColor2)
+      .colsLabel(function(d) {
+        return d + ':00';
+      })
+      .margins({top:20, right:30, bottom:50, left: 70});
+
+    hourCheckAttrTypeHeat.xBorderRadius(0);
+    hourCheckAttrTypeHeat.yBorderRadius(0);
+
+
+    // hourly check-ins for each ride
+    hourCheckRideHeat
+      .width(960)
+      .height(800)
+      .dimension(hourRideDim)
+      .group(hourRideGroup)
+      .keyAccessor(function (d){
+          return d.key[0];
+        })
+      .valueAccessor(function (d){
+          return d.key[1];
+        })
+      .colorAccessor(function (d){
+          return d.value;
+        })
+      .title(function(d) {
+          return 'Hour: ' + d.key[0] + '\n' + 'Attraction ID: ' + d.key[1] + '\n' + 'Attraction Name: ' + d.key[2] + '\n'
+          + 'Number of Check-Ins: ' + d.value;
+        })
+      .colors(scaleColor)
+      .colsLabel(function(d) {
+        return d + ':00';
+      })
+      .margins({top:20, right:30, bottom:50, left: 70});
+
+    hourCheckRideHeat.xBorderRadius(0);
+    hourCheckRideHeat.yBorderRadius(0);
+
+
+    // bubble chart of coordinates and checkins
+    xyCheckRideBubble
+      .width(960)
+      .height(900)
+      .dimension(attrNameDim)
+      .group(attrNameGroup)
+      .x(d3.scale.linear().domain([0, 100]))
+      .y(d3.scale.linear().domain([0, 100]))
+      .r(d3.scale.linear().domain([0, 5000]))
+      .colors(d3.scale.category10())
+      .elasticX(false)
+      .elasticY(false)
+      .elasticRadius(true)
+      .maxBubbleRelativeSize(0.07)
+      .renderHorizontalGridLines(true)
+      .renderVerticalGridLines(true)
+      .xAxisPadding(50)
+      .yAxisPadding(50)
+      .keyAccessor(function (p) {
+        return p.key[1];
+      })
+      .valueAccessor(function (p) {
+        return p.key[2];
+      })
+      .radiusValueAccessor(function (p) {
+        return p.value;
+      })
+      .colorAccessor(function (p){
+        return p.key[4];
+      })
+      .renderLabel(true)
+      .label(function (p) {
+            return p.key[0];
+      })
+      .renderTitle(true)
+      .title(function (p){
+        return p.key[0] + '\n'
+          + 'X: ' + p.key[1] + '\n'
+          + 'Y: ' + p.key[2] + '\n'
+          + 'Map ID: ' + p.key[3] + '\n'
+          + 'Number of Check-Ins: ' + p.value;
+      })
+      .xAxisLabel("X-Coordinate")
+      .yAxisLabel("Y-Coordinate")
+      .margins({top: 10, right: 50, bottom: 45, left: 40});
+
+
+    // render
+    dc.renderAll();
+
+  });
+
+</script>
+
+</div>
+
+</body>
+
+</html>
